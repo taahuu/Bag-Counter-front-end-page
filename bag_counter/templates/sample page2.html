@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .center12 {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            height: 80px;
+            width: 40%;
+        }
+    .text {
+        font-style: italic ;
+        font-size: larger;
+
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("pexels-photo-627678.jpeg");
+      /* background-color: rgb(247, 209, 159); */
+      background-size: cover;
+      /* background-position: center; */
+      height: 100px;
+      margin: 0;
+    }
+    
+    /* .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    /* border-radius: 20px;
+        color: #fff; */
+    /* }*/
+    
+    .login-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    
+      color: #fff;
+    }
+    
+    /* For screens larger than or equal to 768px */
+    @media (min-width: 768px) {
+      .login-container {
+        width: 400px;
+        padding: 40px;
+        border-radius: 20px;
+      }
+    }
+    
+    /* For screens larger than or equal to 992px */
+    @media (min-width: 992px) {
+      .login-container {
+        /* Add any specific styles for larger screens here */
+      }
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .img {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .input-container {
+      margin-bottom: 15px;
+      position: relative;
+    }
+    
+    .input-container input {
+      width: 92%;
+      padding: 15px;
+      font-size: 16px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: #ffffff;
+    }
+    
+    .input-container label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    
+    .input-container input:focus+label,
+    .input-container input:valid+label {
+      transform: translateY(-110%);
+      font-size: 12px;
+    }
+    
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 20px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #ddd;
+    }
+    
+  </style>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HBH Bag Counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"> </head>
+<body>
+  <div class="login-container">
+
+    <img src="HBH.jpeg" alt="HBH" class="center12">
+    <h2>HBH TECHNOLOGIES LLP</h2>
+
+    <div class="input-container text">
+         <div class="img" >
+            Counting....
+         </div> 
+
+         <img class="center12" src="output-onlinegiftools.gif" alt="Loading" width="30%" height="30%" >
+            <br>
+            <br>
+            {{output}}
+    </div>
+
+      
+
+
+
+      <p class="center" style="font-size: 110%; font-style: italic;" id="result"></p>
+        
+    </form>
+  </div>
+</body>
+</html>

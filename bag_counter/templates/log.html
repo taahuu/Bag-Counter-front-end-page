@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HBH-Bag Counter</title>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+    </head>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: black;
+    padding: 5px 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #7367F0;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.hero {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 95vh;
+    background: url('') center/cover no-repeat;
+    padding: 0 50px;
+    position: relative;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-text {
+    z-index: 2;
+    max-width: 530px;
+    margin-right: 10%;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    /* margin-bottom: 60px; */
+    margin-left: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.admission-btn {
+    padding: 10px 30px;
+    background-color: #7367F0;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.signup-form {
+    background-color: white;
+    padding: 40px 40px;
+    
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    margin: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 60%;
+    max-height: 500px;
+    transform: scale(1.3);
+    position: relative; /* Allow moving the element */
+    top: -50px; /* Move the form upward by 50px */
+}
+
+.signup-form p {
+    margin-bottom: 10px;
+    font-size: large;
+    color: #333;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7367F0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.footer {
+            background-color: #d3d3d3; /* Light grey background */
+            color: #333333; /* Dark grey text color for contrast */
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            border-top: 1px solid #cccccc; /* Optional: subtle border at the top */
+            margin-top: -85px; 
+        }
+        .footer p {
+            margin: 0;
+            padding-bottom: 30px;
+        }
+        .black{
+            color: black;
+            font-size: small;
+        }
+        .img{
+            width: 80px;
+            height: 80px;
+        }
+
+
+</style>
+    <body>
+        <header>
+            <nav>
+                <img src="{% static 'images/HBH.png' %}" alt="My Image" class="img">
+
+                <!-- <div class="logo">OneSchool</div> -->
+                <!-- <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Programs</a></li>
+                <li><a href="#">Teachers</a></li>
+            </ul> -->
+                <a
+                    href="https://www.google.com/search?q=hbh+technologies&oq=hbh&gs_lcrp=EgZjaHJvbWUqBggCEEUYOzIGCAAQRRg7MgYIARBFGDsyBggCEEUYOzIGCAMQRRg9MgYIBBBFGD0yBggFEEUYPTIGCAYQRRhBMgYIBxAuGEDSAQgyMDM5ajBqMagCALACAA&sourceid=chrome&ie=UTF-8#"
+                    class="contact-btn">About Us</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>HBH Technologies LLP</h1>
+                <h1 style="font-size: x-large;">Always Be Unique</h1>
+            </div>
+            <div class="signup-form">
+                <!-- <h2>Sign Up</h2> -->
+                <form id="numberForm" method="post" class="">
+                    {% csrf_token %}
+                    <p> Number of Bags: </p>
+                    <input type="number" id="number" name="number" min="1"
+                        max="600" class=""
+                        placeholder="Enter The Number" required>
+                    <p>Vehicle No.: </p>
+                    <input type="text" id="text" name="text"
+                        placeholder="Number Plate" maxlength="10"
+                        required>
+                        <br>
+                    <div class="black">
+                        Last Entry: {{output}}
+                    </div>
+
+                    <div class="black">
+                        Last Truck: {{text}}
+                    </div>
+                    <br>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>
+                © Copyright 2024 HBH TECHNOLOGIES
+            </p>
+        </footer>
+    </body>
+</html>
